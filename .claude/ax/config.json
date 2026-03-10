@@ -35,12 +35,37 @@
     "provider": "github-actions",
     "workflow_file": ".github/workflows/ci.yml"
   },
-  "phases_completed": [],
+  "phases_completed": [
+    {
+      "phase": 1,
+      "title": "Core API & Infrastructure",
+      "started_at": "2026-03-10T12:10:00Z",
+      "completed_at": "2026-03-10T12:30:00Z"
+    },
+    {
+      "phase": 2,
+      "title": "Environment Scoping & Targeting Rules",
+      "started_at": "2026-03-10T12:30:00Z",
+      "completed_at": "2026-03-10T12:45:00Z"
+    },
+    {
+      "phase": 3,
+      "title": "Evaluation Engine & Analytics",
+      "started_at": "2026-03-10T12:45:00Z",
+      "completed_at": "2026-03-10T13:00:00Z"
+    },
+    {
+      "phase": 4,
+      "title": "Frontend Dashboard",
+      "started_at": "2026-03-10T13:00:00Z",
+      "completed_at": "2026-03-10T13:20:00Z"
+    }
+  ],
   "milestone_history": [],
   "last_commands": {
     "init": "2026-03-10T12:00:00Z",
-    "phase": null,
-    "run": null,
+    "phase": "2026-03-10T13:20:00Z",
+    "run": "2026-03-10T12:05:00Z",
     "finish": null,
     "status": null
   }
