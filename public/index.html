@@ -4,14 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Feature Flag Service</title>
-  <style>
-    body { font-family: system-ui, sans-serif; max-width: 600px; margin: 50px auto; padding: 0 20px; }
-    h1 { color: #333; }
-    p { color: #666; }
-  </style>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <h1>Feature Flag Service</h1>
-  <p>Dashboard coming soon. API is available at <code>/api/flags</code>.</p>
+  <header>
+    <h1>Feature Flag Service</h1>
+    <div class="env-switcher">
+      <label for="env-select">Environment:</label>
+      <select id="env-select">
+        <option value="dev">Dev</option>
+        <option value="staging">Staging</option>
+        <option value="production">Production</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <section id="flag-list-section">
+      <div class="section-header">
+        <h2>Feature Flags</h2>
+        <button id="btn-create" class="btn btn-primary">+ Create Flag</button>
+      </div>
+      <div id="flag-list" class="flag-list">
+        <p class="empty-state">Loading flags...</p>
+      </div>
+    </section>
+
+    <section id="flag-form-section" class="hidden">
+      <h2 id="form-title">Create Flag</h2>
+      <form id="flag-form">
+        <input type="hidden" id="flag-id">
+        <div class="form-group">
+          <label for="flag-name">Name</label>
+          <input type="text" id="flag-name" required placeholder="e.g., dark-mode">
+        </div>
+        <div class="form-group">
+          <label for="flag-description">Description</label>
+          <input type="text" id="flag-description" placeholder="What does this flag do?">
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="flag-enabled"> Globally Enabled
+          </label>
+        </div>
+        <fieldset class="targeting-rules">
+          <legend>Targeting Rules (for <span id="targeting-env">dev</span>)</legend>
+          <div class="form-group">
+            <label for="flag-percentage">Percentage Rollout</label>
+            <input type="range" id="flag-percentage" min="0" max="100" value="100">
+            <span id="percentage-display">100%</span>
+          </div>
+          <div class="form-group">
+            <label for="flag-allowlist">Allowlist (comma-separated user IDs)</label>
+            <input type="text" id="flag-allowlist" placeholder="user-1, user-2">
+          </div>
+          <div class="form-group">
+            <label for="flag-blocklist">Blocklist (comma-separated user IDs)</label>
+            <input type="text" id="flag-blocklist" placeholder="user-3">
+          </div>
+        </fieldset>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="button" id="btn-cancel" class="btn btn-secondary">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="analytics-section" class="hidden">
+      <div class="section-header">
+        <h2>Analytics: <span id="analytics-flag-name"></span></h2>
+        <button id="btn-close-analytics" class="btn btn-secondary">Close</button>
+      </div>
+      <div id="analytics-content" class="analytics-grid">
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
 </body>
 </html>
