@@ -1,0 +1,47 @@
+{
+  "initialized_at": "2026-03-10T12:00:00Z",
+  "project_name": "Feature Flag Service",
+  "mode": "greenfield",
+  "profile": "balanced",
+  "notion": {
+    "parent_page_id": null,
+    "doc_pages": {
+      "architecture": null,
+      "data_flow": null,
+      "api_reference": null,
+      "component_index": null,
+      "adrs": null,
+      "deployment": null,
+      "dev_workflow": null,
+      "phase_reports": null
+    },
+    "last_updated": null
+  },
+  "testing": {
+    "stack": "node",
+    "language_version": "20",
+    "test_framework": "node:test",
+    "unit_command": "npm test",
+    "integration_command": "npm run test:integration",
+    "scenario_command": "npm run test:scenario",
+    "docker_compose_file": null
+  },
+  "deployment": {
+    "type": "web-app",
+    "provider": "vercel",
+    "url": null
+  },
+  "ci": {
+    "provider": "github-actions",
+    "workflow_file": ".github/workflows/ci.yml"
+  },
+  "phases_completed": [],
+  "milestone_history": [],
+  "last_commands": {
+    "init": "2026-03-10T12:00:00Z",
+    "phase": null,
+    "run": null,
+    "finish": null,
+    "status": null
+  }
+}
