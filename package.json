@@ -1,0 +1,31 @@
+{
+  "name": "ax-test-flags",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test src/**/*.test.js",
+    "test:integration": "node --test test/integration/**/*.test.js",
+    "test:scenario": "node --test test/scenarios/**/*.test.js",
+    "lint": "echo 'No linter configured'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shootdaj/ax-test-flags.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shootdaj/ax-test-flags/issues"
+  },
+  "homepage": "https://github.com/shootdaj/ax-test-flags#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
